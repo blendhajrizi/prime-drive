@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prime-drive</title>
+    <link rel="stylesheet" href="output.css">
+    
+</head>
+<body>
+       <!-- Header -->
+       <header class=" h-20 bg-zinc-800 flex items-center ">
+        <div class="mx-auto container px-6  md:px-16   flex justify-between items-center ">
+        <div class="flex items-center gap-8">
+            <img class="flex gap-4" src="/src/images/logo.png" alt="">
+        <nav>
+            <ul class="text-gray-500 flex  gap-8 ">
+                <li><a class="hover:text-orange-300 transition-all duration-500" href="#">Home</a></li>
+                <li><a class="hover:text-orange-300 transition-all duration-500" href="#">Offers</a></li>
+                <li><a class="hover:text-orange-300 transition-all duration-500" href="#">Locations</a></li>
+                <li><a class="hover:text-orange-300 transition-all duration-500" href="#">Out Fleet</a></li>
+                <li><a class="hover:text-orange-300 transition-all duration-500" href="#">Support</a></li>
+            </ul>
+        </nav>
+        
+        </div>
+        <div>
+            <a class="text-orange-400 border px-6 py-2 hover:bg-orange-400 hover:text-zinc-800 transition-all duration-500" href="#">Log in</a>
+            <a class="bg-orange-400  border border-orange-400 px-6 py-2 hover:bg-zinc-800 hover:text-orange-400 transition-all duration-500" href="#">Sign up</a>
+        </div>
+        </div>
+        
+       </header>
+       <!-- Main -->
+       <main class="h-full py-52 bg-cover bg-center bg-no-repeat" style="background-image: url('/src/images/lambo.jpg');">
+         <div class="mx-auto container  md:px-16  flex flex-col  ">
+           <h3 class="text-white text-3xl font-bold">Car Rentals</h3>
+           <h1 class="text-white text-6xl font-bold font-serif">For your <span class="text-orange-400">Everyday <br> Commute</span> or <span class="text-orange-400"> Leisure</span></h1>
+           <div class="flex flex-col w-1/2 h-24 py-16 bg-white pl-4 justify-center gap-3 mt-10">
+             <h3 class="text-2xl font-bold font-serif">Let's find your ideal car</h3>
+             <div class=" flex  gap-1  ">
+                <input class="w-1/2 px-4 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-orange-300 transition duration-200" placeholder="Enter your pickup location...." type="text">
+                <input class="w-1/3 px-4 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-orange-300 transition duration-200 " type="date">
+                <a class="px-6 py-2 bg-orange-400 hover:bg-zinc-800 hover:text-orange-400 transition-all duration-500 " href="#">Search</a>
+             </div>
+           </div>
+         </div>
+       </main>
+    <!-- Service -->
+       <section>
+         
+           <div class="container mx-auto flex flex-col  md:px-16  items-center py-12 px-6 ">
+            <div class="container mx-auto flex flex-col md:flex-row items-center py-12 px-6 md:px-12">
+                
+                <div class="md:w-1/2 relative">
+                    <img src="/src/images/audi.jpg" alt="Car Rental" class="rounded-lg shadow-lg">
+                </div>
+                
+               
+                <div class="md:w-1/2 md:pl-12 mt-6 md:mt-0">
+                    <h3 class="text-orange-500 font-semibold text-lg">Rental Cars & Much More</h3>
+                    <h1 class="text-4xl font-bold text-gray-900 mt-2">Experience A Rental Service Like Never Before</h1>
+                    <p class="text-gray-600 mt-4">Phasellus pulvinar faucibus neque, nec rhoncus nunc ultrices sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button class="mt-6 bg-orange-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-orange-600 hover:text-zinc-800 transition-all duration-500">Learn More</button>
+                </div>
+              </div>
+               <div class="container relative py-12 px-6 md:px-12 mx-auto flex flex-col md:flex-row items-center justify-center gap-20">
+                <div class="w-1/4">
+                    <h2 class="text-2xl font-bold font-serif">Our Service Is Built <br> With Trust</h2>
+                    <p class="text-md text-gray-400">Lorem ipsum dolor sit amet consectetur <br> adipisicing elit.</p>
+                </div>
+                <div class="flex flex-col w-1/4 gap-6"><img class="w-22 h-16" src="/src/images/insured.png" alt="">
+                <h3  class="text-xl font-bold font-serif">Insured Safe</h3></div>
+                <div class="flex flex-col w-1/4 gap-6"><img class="w-22 h-16" src="/src/images/certifed.png" alt="">
+                <h3 class="text-xl font-bold font-serif">Certifed Chauffeur</h3></div>
+                <div class="flex flex-col w-1/4 gap-6"><img class="w-22 h-16" src="/src/images/support.png" alt="">
+                <h3 class="text-xl font-bold font-serif">24/7 Support</h3></div>
+               </div>
+           </div>
+         
+       </section>
+      <!-- Our Top Cars -->
+       <section class="bg-gray-100">
+        <div class="container h-auto mx-auto flex flex-col py-0 pb-0 px-6  md:px-16  ">
+            <div class="flex flex-col gap-4">
+                <h3 class="text-xl text-orange-400 font-serif pt-10">Our Top Cars</h3>
+            <h2 class="text-4xl font-serif font-semibold relative inline-block after:content-[''] after:block after:w-1/5 after:h-1 after:bg-orange-500 after:mt-5">Cars For All Your Needs</h1>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 grid-rows-6 md:grid-rows-2 gap-4 py-6">
+                <div class="bg-white border shadow-xl border-gray-200 flex flex-col gap-2 pb-8 ">
+                    <img class="h-3/4" src="/src/images/hnd.jpg" alt="">
+                    <h3 class="text-xl font-semibold text-red-950 font-serif pl-5">Huyndai Creta 2020</h3>
+                    <p class="text-gray-500 px-5 after:content-[''] after:block after:w-11/12 after:h-px after:bg-gray-300 after:mt-4 after:mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <div class="pl-6 flex justify-between pr-12">
+                        <p class="text-gray-500">4.7 (245 reviews)</p>
+                        <p class="font-semibold">$40/day</p>
+                    </div>
+                </div>
+                <div class="bg-white border shadow-xl border-gray-200 flex flex-col gap-2 pb-8 ">
+                    <img class="h-3/4" src="/src/images/h2.jpg" alt="">
+                    <h3 class="text-xl font-semibold text-red-950 font-serif pl-5">Honda Accord 2018</h3>
+                    <p class="text-gray-500 px-5 after:content-[''] after:block after:w-11/12 after:h-px after:bg-gray-300 after:mt-4 after:mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <div class="pl-6 flex justify-between pr-12">
+                        <p class="text-gray-500">4.7 (245 reviews)</p>
+                        <p class="font-semibold">$40/day</p>
+                    </div>
+                </div>
+                <div class="bg-white border shadow-xl border-gray-200 flex flex-col gap-2 pb-8 ">
+                    <img class="h-3/4" src="/src/images/bmw.jpg" alt="">
+                    <h3 class="text-xl font-semibold text-red-950 font-serif pl-5">BMW M3 2013</h3>
+                    <p class="text-gray-500 px-5 after:content-[''] after:block after:w-11/12 after:h-px after:bg-gray-300 after:mt-4 after:mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <div class="pl-6 flex justify-between pr-12">
+                        <p class="text-gray-500">4.7 (245 reviews)</p>
+                        <p class="font-semibold">$40/day</p>
+                    </div>
+                </div>
+                <div class="bg-white border shadow-xl border-gray-200 flex flex-col gap-2  ">
+                    <img class="h-3/4" src="/src/images/Chevrolet-Camaro-2022.jpg" alt="">
+                    <h3 class="text-xl font-semibold text-red-950 font-serif pl-5">Chevrolet Camaro 2022</h3>
+                    <p class="text-gray-500 px-5 after:content-[''] after:block after:w-11/12 after:h-px after:bg-gray-300 after:mt-4 after:mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <div class="pl-6 flex justify-between pr-12">
+                        <p class="text-gray-500">4.7 (245 reviews)</p>
+                        <p class="font-semibold">$40/day</p>
+                    </div>
+                </div>
+                <div class="bg-white border shadow-xl border-gray-200 flex flex-col gap-2  ">
+                    <img class="h-3/4" src="/src/images/ferrari-spider-458" alt="">
+                    <h3 class="text-xl font-semibold text-red-950 font-serif pl-5">Ferrari 458 Spider 2015</h3>
+                    <p class="text-gray-500 px-5 after:content-[''] after:block after:w-11/12 after:h-px after:bg-gray-300 after:mt-4 after:mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <div class="pl-6 flex justify-between pr-12">
+                        <p class="text-gray-500">4.7 (245 reviews)</p>
+                        <p class="font-semibold">$40/day</p>
+                    </div>
+                </div>
+                <div class="bg-white border shadow-xl border-gray-200 flex flex-col gap-2  ">
+                    <img class="h-3/4" src="/src/images/ford-mustang-2017.jpg" alt="">
+                    <h3 class="text-xl font-semibold text-red-950 font-serif pl-5">Ford Mustang Shelby 2017</h3>
+                    <p class="text-gray-500 px-5 after:content-[''] after:block after:w-11/12 after:h-px after:bg-gray-300 after:mt-4 after:mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <div class="pl-6 flex justify-between pr-12">
+                        <p class="text-gray-500">4.7 (245 reviews)</p>
+                        <p class="font-semibold">$40/day</p>
+                    </div>
+                </div>
+                 </div>
+                  </div>
+              <div class="flex items-center justify-center pt-8 pb-30">
+                <a class="px-6 py-2 bg-orange-400 hover:bg-zinc-800 hover:text-orange-400 transition-all duration-500 items-center text-center   " href="#">View all Cars</a>
+              </div>
+        </div>
+       </section>
+      <!-- Our fleet -->
+       <section>
+        <div class="container h-auto mx-auto flex flex-col py-0 pb-20 px-6  md:px-16  ">
+          <div class="flex justify-between items-end pt-10 pb-6">
+            <div class="flex flex-col gap-4">
+                <h3 class="text-xl text-orange-400 font-serif pt-10">Our Fleet</h3>
+            <h2 class="text-4xl font-serif font-semibold relative inline-block after:content-[''] after:block after:w-1/5 after:h-1 after:bg-orange-500 after:mt-5">Browse by Category</h1>
+            </div>
+           <div class="flex">
+            <a class="px-6 py-2  h-10 bg-orange-400 hover:bg-zinc-800 hover:text-orange-400 transition-all duration-500 " href="#">View All</a>
+           </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-4 md:grid-rows-1 gap-8 py-6  items-center">
+            <div class="border border-gray-300 shadow-xl  ">
+                <img class="w-full h-10/12" src="/src/images/sedans.jpg" alt="">
+                <h2 class="text-xl pl-6 py-4 font-semibold  font-serif ">Sedans</h2>
+            </div>
+            <div class="border border-gray-300 shadow-xl  ">
+                <img class="w-full h-10/12" src="/src/images/suv.jpg" alt="">
+                <h2 class="text-xl pl-6 py-4 font-semibold  font-serif ">SUVs</h2>
+            </div>
+            <div class="border border-gray-300 shadow-xl  ">
+                <img class="w-full h-10/12" src="/src/images/convertibles.jpg" alt="">
+                <h2 class="text-xl pl-6 py-4 font-semibold  font-serif ">Convertibles</h2>
+            </div>
+            <div class="border border-gray-300 shadow-xl  ">
+                <img class="w-full h-10/12" src="/src/images/sportscar.jpg" alt="">
+                <h2 class="text-xl pl-6 py-4 font-semibold  font-serif ">Sportscar</h2>
+            </div>
+
+          </div>
+          </div>
+       </section>
+       <!--Testimonials  -->
+       <section class="bg-zinc-800">
+       <div class="container h-auto mx-auto md:px-16  px-6  pb-30">
+       <div class="flex flex-col gap-8">
+        <div class="flex flex-col gap-4 pt-10">
+            <h3 class="text-xl text-orange-400 font-serif pt-10">Testimonials</h3>
+        <h2 class="text-4xl text-white font-serif font-semibold relative inline-block after:content-[''] after:block after:w-1/5 after:h-1 after:bg-orange-500 after:mt-4 after:mb-10">What Our Customers Say About Us</h1>
+        </div>
+        <div class="flex flex-row gap-8 pb-10">
+            <img src="/src/images/pp.jpg" alt="">
+            <div class="flex flex-col gap-6 justify-center">
+                <div>
+                    <img class="w-1/12 h-24 " src="/src/images/p.png" alt="">
+                <p class="text-xl text-gray-400 ">Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl text-orange-400 font-semibold font-serif">Dianne Russell</h3>
+                <p class="text-white">Founder</p>
+                </div>
+            </div>
+        </div>
+       </div>
+       </div>  
+     
+       </section>
+
+       <!-- Download -->
+        <section class="bg-orange-400">
+            <div class="container mx-auto py-10  gap-8  ">
+                   <div class="flex flex-col justify-center items-center">
+                    <h1 class="text-3xl text-white">Download Our App & Get Started</h1> 
+                     </div>
+                     <div class=" flex items-center justify-center gap-4 pt-10">
+                      <a class=" px-5 gap-2 flex bg-orange-400 py-2 border border-white text-white text-center 
+                      hover:text-zinc-800 hover:scale-105 transition-all duration-500" href="https://www.apple.com/app-store/"><img src="/src/images/apple.png" alt="">App Store</a>
+                      <a class="px-5 flex gap-2 bg-orange-400 py-2 border border-white text-white text-center
+                      hover:text-zinc-800 hover:scale-105 transition-all duration-500" href="https://play.google.com/store/games?hl=en"><img src="/src/images/playstore.png" alt="">Play Store</a>
+                    </div>
+                
+                </div>
+            
+                
+        </section>
+</body>
+</html>
