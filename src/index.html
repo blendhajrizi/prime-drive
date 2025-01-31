@@ -1,278 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>prime-drive</title>
     <link rel="stylesheet" href="output.css">
-    
+
 </head>
+
 <body>
-       <!-- Header -->
-       <header class=" h-20 bg-zinc-800 flex items-center ">
-        <div class="mx-auto container px-6  md:px-16   flex justify-between items-center ">
-        <div class="flex items-center gap-8">
-            <img class="flex gap-4" src="/src/images/logo.png" alt="">
-            <div class="flex items-center gap-8">
-                
-                <nav class="hidden md:flex">
-                    <ul class="text-gray-500 flex gap-8">
-                        <li><a class="hover:text-orange-300 transition-all duration-500" href="#">Home</a></li>
-                        <li><a class="hover:text-orange-300 transition-all duration-500" href="#">Offers</a></li>
-                        <li><a class="hover:text-orange-300 transition-all duration-500" href="#">Locations</a></li>
-                        <li><a class="hover:text-orange-300 transition-all duration-500" href="#">Our Fleet</a></li>
-                        <li><a class="hover:text-orange-300 transition-all duration-500" href="#">Support</a></li>
-                    </ul>
-                </nav>
-                <!-- Hamburger Menu for Mobile -->
-                <button class="md:hidden text-white focus:outline-none" id="menu-toggle">
-                    ☰
-                </button>
+    <!-- Header -->
+    <header class="h-20 bg-zinc-800 flex items-center fixed top-0 left-0 w-full z-50">
+        <div class="mx-auto container px-6 md:px-16 flex justify-between items-center">
+            <!--  Desktop -->
+            <div class="flex items-center gap-8 justify-between">
+                <img class="flex gap-4" src="/src/images/logo.png" alt="">
+                <div class="flex items-center gap-8 ">
+                    <nav class="hidden lg:flex">
+                        <ul class="text-gray-500 flex gap-8">
+                            <li><a class="hover:text-orange-300 transition-all duration-500" href="#">Home</a></li>
+                            <li><a class="hover:text-orange-300 transition-all duration-500" href="#">Offers</a></li>
+                            <li><a class="hover:text-orange-300 transition-all duration-500" href="#">Locations</a></li>
+                            <li><a class="hover:text-orange-300 transition-all duration-500" href="#">Our Fleet</a></li>
+                            <li><a class="hover:text-orange-300 transition-all duration-500" href="#">Support</a></li>
+                        </ul>
+                    </nav>
+    
+                    
+                    <button class="lg:hidden text-white focus:outline-none " id="menu-toggle" aria-label="Toggle menu">
+                        ☰
+                    </button>
+                </div>
             </div>
-            <!-- Mobile Menu -->
-            <div id="mobile-menu"class="hidden absolute top-20 left-0 w-full bg-zinc-800 text-white flex flex-col gap-4 p-4"
+    
+            <!--  mobile -->
+            <div id="mobile-menu" class="lg:hidden absolute top-20 left-0 w-full bg-zinc-800 text-white flex flex-col gap-4 p-4">
                 <a href="#" class="hover:text-orange-300">Home</a>
                 <a href="#" class="hover:text-orange-300">Offers</a>
                 <a href="#" class="hover:text-orange-300">Locations</a>
                 <a href="#" class="hover:text-orange-300">Our Fleet</a>
                 <a href="#" class="hover:text-orange-300">Support</a>
+
+                <div class="md:hidden flex gap-4">
+                    <a class="text-orange-400 border px-6 py-2 hover:bg-orange-400 hover:text-zinc-800 transition-all duration-500" href="#">Log in</a>
+                    <a class="bg-orange-400 border border-orange-400 px-6 py-2 hover:bg-zinc-800 hover:text-orange-400 transition-all duration-500" href="#">Sign up</a>
+                </div>
             </div>
+    
             
-            <script>
-            document.getElementById('menu-toggle').addEventListener('click', function () {
-                document.getElementById('mobile-menu').classList.toggle('hidden');
-            });
-            </script>
-        
+            <div class="hidden md:flex gap-2 ">
+                <a class="text-orange-400 border px-6 py-2 hover:bg-orange-400 hover:scale-105 hover:text-zinc-800 transition-all duration-500"
+                    href="#">Log in</a>
+                <a class="bg-orange-400 border border-orange-400 px-6 py-2 hover:bg-zinc-800 hover:text-orange-400 transition-all duration-500"
+                    href="#">Sign up</a>
+            </div>
         </div>
-        <div>
-            <a class="text-orange-400 border px-6 py-2 hover:bg-orange-400 hover:text-zinc-800 transition-all duration-500" href="#">Log in</a>
-            <a class="bg-orange-400  border border-orange-400 px-6 py-2 hover:bg-zinc-800 hover:text-orange-400 transition-all duration-500" href="#">Sign up</a>
-        </div>
-        </div>
-        
-       </header>
-       <!-- Main -->
-       <main class="h-full sm:py-20 md:py-52 bg-cover bg-center bg-no-repeat" style="background-image: url('/src/images/lambo.jpg');">
-        <div class="container mx-auto px-6 md:px-16 flex flex-col">
-            <h3 class="text-white text-2xl sm:text-3xl font-bold">Car Rentals</h3>
-            <h1 class="text-white text-4xl sm:text-5xl md:text-6xl font-bold font-serif">
-                For your <span class="text-orange-400">Everyday <br class="hidden sm:block"> Commute</span> or <span class="text-orange-400"> Leisure</span>
+    </header>
+    
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            let menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    
+        document.addEventListener('click', function (event) {
+            let menu = document.getElementById('mobile-menu');
+            let button = document.getElementById('menu-toggle');
+    
+            if (!menu.contains(event.target) && !button.contains(event.target)) {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
+    <!-- Main -->
+    <main class="h-full sm:py-20 lg:py-52 bg-cover bg-center bg-no-repeat"
+        style="background-image: url('/src/images/lambo.jpg');">
+        <div class="container mx-auto px-6 lg:px-16 flex flex-col">
+            <h3 class="text-white text-2xl  md:text-3xl  sm:text-3xl font-bold">Car Rentals</h3>
+            <h1 class="text-white text-4xl   sm:text-5xl md:text-6xl font-bold font-serif">
+                For your <span class="text-orange-400">Everyday <br class="hidden sm:block"> Commute</span> or <span
+                    class="text-orange-400"> Leisure</span>
             </h1>
-            <div class="flex flex-col w-full sm:w-1/2 h-auto py-10 bg-white pl-4 justify-center gap-3 mt-10">
+            <div class="flex flex-col w-full lg:w-1/2 h-auto py-10 bg-white pl-4 justify-center pr-5 gap-3 mt-10 lg:hover:scale-x-110 lg:hover:origin-left transition-all duration-500">
                 <h3 class="text-xl sm:text-2xl font-bold font-serif">Let's find your ideal car</h3>
-                <div class="flex flex-col sm:flex-row gap-2">
-                    <input class="w-full sm:w-1/2 px-4 py-2 border border-gray-300" placeholder="Enter your pickup location..." type="text">
-                    <input class="w-full sm:w-1/3 px-4 py-2 border border-gray-300" type="date">
-                    <a class="px-6 py-2 bg-orange-400 hover:bg-zinc-800 hover:text-orange-400 transition-all duration-500 text-center" href="#">Search</a>
+                <div class="flex flex-col md:flex-row  gap-2">
+                    <input class="w-11/12 md:1/2    px-4 py-2 border border-gray-300 "
+                        placeholder="Enter your pickup location..." type="text">
+                    <input class="w-11/12 md:1/2   px-4 py-2 border border-gray-300" type="date">
+                    <a class="px-6 py-2  bg-orange-400 hover:bg-zinc-800 hover:text-orange-400 transition-all duration-500 text-center"
+                        href="#">Search</a>
                 </div>
             </div>
         </div>
     </main>
-    
+
     <!-- Service -->
-       <section>
-         
-           <div class="container mx-auto flex flex-col  md:px-16  items-center py-12 px-6 ">
+    <section>
+
+        <div class="container mx-auto flex flex-col  md:px-16  items-center py-12 px-6 ">
             <div class="container mx-auto flex flex-col md:flex-row items-center py-12 px-6 md:px-12">
-                
-                <div class="md:w-1/2 relative">
+
+                <div class="md:w-1/2 relative hover:overflow">
                     <img src="/src/images/audi.jpg" alt="Car Rental" class="rounded-lg shadow-lg">
                 </div>
-                
-               
-                <div class="md:w-1/2 md:pl-12 mt-6 md:mt-0">
+
+
+                <div class="md:w-1/2 md:pl-12 mt-6 md:mt-0 hover:scale-110 origin-right bg-white py-10 transition-all duration-500">
                     <h3 class="text-orange-500 font-semibold text-lg">Rental Cars & Much More</h3>
                     <h1 class="text-4xl font-bold text-gray-900 mt-2">Experience A Rental Service Like Never Before</h1>
-                    <p class="text-gray-600 mt-4">Phasellus pulvinar faucibus neque, nec rhoncus nunc ultrices sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <button class="mt-6 bg-orange-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-orange-600 hover:text-zinc-800 transition-all duration-500">Learn More</button>
+                    <p class="text-gray-600 mt-4">Phasellus pulvinar faucibus neque, nec rhoncus nunc ultrices sit amet.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button
+                        class="mt-6 bg-orange-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-orange-600 hover:text-zinc-800 transition-all duration-500">Learn
+                        More</button>
                 </div>
-              </div>
-               <div class="container relative py-12 px-6 md:px-12 mx-auto flex flex-col md:flex-row items-center justify-center gap-20">
+            </div>
+            <div
+                class="container relative py-12 px-6 md:px-12 mx-auto flex flex-col md:flex-row items-center justify-center gap-20">
                 <div class="w-1/4">
                     <h2 class="text-2xl font-bold font-serif">Our Service Is Built <br> With Trust</h2>
                     <p class="text-md text-gray-400">Lorem ipsum dolor sit amet consectetur <br> adipisicing elit.</p>
                 </div>
                 <div class="flex flex-col w-1/4 gap-6"><img class="w-22 h-16" src="/src/images/insured.png" alt="">
-                <h3  class="text-xl font-bold font-serif">Insured Safe</h3></div>
+                    <h3 class="text-xl font-bold font-serif">Insured Safe</h3>
+                </div>
                 <div class="flex flex-col w-1/4 gap-6"><img class="w-22 h-16" src="/src/images/certifed.png" alt="">
-                <h3 class="text-xl font-bold font-serif">Certifed Chauffeur</h3></div>
+                    <h3 class="text-xl font-bold font-serif">Certifed Chauffeur</h3>
+                </div>
                 <div class="flex flex-col w-1/4 gap-6"><img class="w-22 h-16" src="/src/images/support.png" alt="">
-                <h3 class="text-xl font-bold font-serif">24/7 Support</h3></div>
-               </div>
-           </div>
-         
-       </section>
-      <!-- Our Top Cars -->
-       <section class="bg-gray-100">
+                    <h3 class="text-xl font-bold font-serif">24/7 Support</h3>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Our Top Cars -->
+    <section class="bg-gray-100">
         <div class="container h-auto mx-auto flex flex-col py-0 pb-0 px-6  md:px-16  ">
             <div class="flex flex-col gap-4">
                 <h3 class="text-xl text-orange-400 font-serif pt-10">Our Top Cars</h3>
-            <h2 class="text-4xl font-serif font-semibold relative inline-block after:content-[''] after:block after:w-1/5 after:h-1 after:bg-orange-500 after:mt-5">Cars For All Your Needs</h1>
+                <h2
+                    class="text-4xl font-serif font-semibold relative inline-block after:content-[''] after:block after:w-1/5 after:h-1 after:bg-orange-500 after:mt-5">
+                    Cars For All Your Needs</h1>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 py-6">
-                <div class="bg-white border shadow-xl border-gray-200 flex flex-col gap-2 pb-8">
+                <div class="bg-white border shadow-xl border-gray-200 flex flex-col gap-2 pb-8 hover:opacity-80 hover:shadow-2xl hover:cursor-pointer transition duration-500">
                     <img class="h-3/4 w-full object-cover" src="/src/images/hnd.jpg" alt="">
                     <h3 class="text-lg sm:text-xl font-semibold text-red-950 font-serif pl-5">Hyundai Creta 2020</h3>
-                    <p class="text-gray-500 px-5 after:content-[''] after:block after:w-11/12 after:h-px after:bg-gray-300 after:mt-4 after:mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <p
+                        class="text-gray-500 px-5 after:content-[''] after:block after:w-11/12 after:h-px after:bg-gray-300 after:mt-4 after:mb-4">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     <div class="pl-6 flex justify-between pr-12">
                         <p class="text-gray-500">4.7 (245 reviews)</p>
                         <p class="font-semibold">$40/day</p>
                     </div>
                 </div>
-                <div class="bg-white border shadow-xl border-gray-200 flex flex-col gap-2 pb-8 ">
+                <div class="bg-white border shadow-xl border-gray-200 flex flex-col gap-2 pb-8 hover:opacity-80 hover:shadow-2xl hover:cursor-pointer transition duration-500">
                     <img class="h-3/4  w-full object-cover " src="/src/images/h2.jpg" alt="">
                     <h3 class="text-lg sm:text-xl font-semibold text-red-950 font-serif pl-5">Honda Accord 2018</h3>
-                    <p class="text-gray-500 px-5 after:content-[''] after:block after:w-11/12 after:h-px after:bg-gray-300 after:mt-4 after:mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <p
+                        class="text-gray-500 px-5 after:content-[''] after:block after:w-11/12 after:h-px after:bg-gray-300 after:mt-4 after:mb-4">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     <div class="pl-6 flex justify-between pr-12">
                         <p class="text-gray-500">4.7 (245 reviews)</p>
                         <p class="font-semibold">$40/day</p>
                     </div>
                 </div>
-                <div class="bg-white border shadow-xl border-gray-200 flex flex-col gap-2 pb-8 ">
+                <div class="bg-white border shadow-xl border-gray-200 flex flex-col gap-2 pb-8 hover:opacity-80 hover:shadow-2xl hover:cursor-pointer transition duration-500">
                     <img class="h-3/4  w-full object-cover" src="/src/images/bmw.jpg" alt="">
                     <h3 class="text-lg sm:text-xl font-semibold text-red-950 font-serif pl-5">BMW M3 2013</h3>
-                    <p class="text-gray-500 px-5 after:content-[''] after:block after:w-11/12 after:h-px after:bg-gray-300 after:mt-4 after:mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <p
+                        class="text-gray-500 px-5 after:content-[''] after:block after:w-11/12 after:h-px after:bg-gray-300 after:mt-4 after:mb-4">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     <div class="pl-6 flex justify-between pr-12">
                         <p class="text-gray-500">4.7 (245 reviews)</p>
                         <p class="font-semibold">$40/day</p>
                     </div>
                 </div>
-                <div class="bg-white border shadow-xl border-gray-200 flex flex-col gap-2 pb-8 ">
+                <div class="bg-white border shadow-xl border-gray-200 flex flex-col gap-2 pb-8 hover:opacity-80 hover:shadow-2xl hover:cursor-pointer transition duration-500">
                     <img class="h-3/4  w-full object-cover" src="/src/images/Chevrolet-Camaro-2022.jpg" alt="">
                     <h3 class="text-lg sm:text-xl font-semibold text-red-950 font-serif pl-5">Chevrolet Camaro 2022</h3>
-                    <p class="text-gray-500 px-5 after:content-[''] after:block after:w-11/12 after:h-px after:bg-gray-300 after:mt-4 after:mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <p
+                        class="text-gray-500 px-5 after:content-[''] after:block after:w-11/12 after:h-px after:bg-gray-300 after:mt-4 after:mb-4">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     <div class="pl-6 flex justify-between pr-12">
                         <p class="text-gray-500">4.7 (245 reviews)</p>
                         <p class="font-semibold">$40/day</p>
                     </div>
                 </div>
-               
-                <div class="bg-white border shadow-xl border-gray-200 flex flex-col gap-2 pb-8 ">
+
+                <div class="bg-white border shadow-xl border-gray-200 flex flex-col gap-2 pb-8 hover:opacity-80 hover:shadow-2xl hover:cursor-pointer transition duration-500">
                     <img class="h-3/4  w-full object-cover" src="/src/images/ferrari-spider-458" alt="">
-                    <h3 class="text-lg sm:text-xl font-semibold text-red-950 font-serif pl-5">Ferrari 458 Spider 2015</h3>
-                    <p class="text-gray-500 px-5 after:content-[''] after:block after:w-11/12 after:h-px after:bg-gray-300 after:mt-4 after:mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <h3 class="text-lg sm:text-xl font-semibold text-red-950 font-serif pl-5">Ferrari 458 Spider 2015
+                    </h3>
+                    <p
+                        class="text-gray-500 px-5 after:content-[''] after:block after:w-11/12 after:h-px after:bg-gray-300 after:mt-4 after:mb-4">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     <div class="pl-6 flex justify-between pr-12">
                         <p class="text-gray-500">4.7 (245 reviews)</p>
                         <p class="font-semibold">$40/day</p>
                     </div>
                 </div>
-                <div class="bg-white border shadow-xl border-gray-200 flex flex-col gap-2 pb-8 ">
+                <div class="bg-white border shadow-xl border-gray-200 flex flex-col gap-2 pb-8 hover:opacity-80 hover:shadow-2xl hover:cursor-pointer transition duration-500">
                     <img class="h-3/4  w-full object-cover" src="/src/images/ford-mustang-2017.jpg" alt="">
-                    <h3 class="text-lg sm:text-xl font-semibold text-red-950 font-serif pl-5">Ford Mustang  2017</h3>
-                    <p class="text-gray-500 px-5 after:content-[''] after:block after:w-11/12 after:h-px after:bg-gray-300 after:mt-4 after:mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <h3 class="text-lg sm:text-xl font-semibold text-red-950 font-serif pl-5">Ford Mustang 2017</h3>
+                    <p
+                        class="text-gray-500 px-5 after:content-[''] after:block after:w-11/12 after:h-px after:bg-gray-300 after:mt-4 after:mb-4">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     <div class="pl-6 flex justify-between pr-12">
                         <p class="text-gray-500">4.7 (245 reviews)</p>
                         <p class="font-semibold">$40/day</p>
                     </div>
                 </div>
-                 </div>
-                  </div>
-              <div class="flex items-center justify-center pt-8 pb-30">
-                <a class="px-6 py-2 bg-orange-400 hover:bg-zinc-800 hover:text-orange-400 transition-all duration-500 items-center text-center   " href="#">View all Cars</a>
-              </div>
+            </div>
         </div>
-       </section>
-      <!-- Our fleet -->
-       <section>
+        <div class="flex items-center justify-center pt-8 pb-30">
+            <a class="px-6 py-2 bg-orange-400 hover:bg-zinc-800 hover:text-orange-400 transition-all duration-500 items-center text-center   "
+                href="#">View all Cars</a>
+        </div>
+        </div>
+    </section>
+    <!-- Our fleet -->
+    <section>
         <div class="container h-auto mx-auto flex flex-col py-0 pb-20 px-6  md:px-16  ">
-          <div class="flex justify-between items-end pt-10 pb-6">
-            <div class="flex flex-col gap-4">
-                <h3 class="text-xl text-orange-400 font-serif pt-10">Our Fleet</h3>
-            <h2 class="text-4xl font-serif font-semibold relative inline-block after:content-[''] after:block after:w-1/5 after:h-1 after:bg-orange-500 after:mt-5">Browse by Category</h1>
-            </div>
-           <div class="flex">
-            <a class="px-6 py-2  h-10 bg-orange-400 hover:bg-zinc-800 hover:text-orange-400 transition-all duration-500 " href="#">View All</a>
-           </div>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-4 md:grid-rows-1 gap-8 py-6  items-center">
-            <div class="border border-gray-300 shadow-xl  ">
-                <img class="w-full h-10/12" src="/src/images/sedans.jpg" alt="">
-                <h2 class="text-xl pl-6 py-4 font-semibold  font-serif ">Sedans</h2>
-            </div>
-            <div class="border border-gray-300 shadow-xl  ">
-                <img class="w-full h-10/12" src="/src/images/suv.jpg" alt="">
-                <h2 class="text-xl pl-6 py-4 font-semibold  font-serif ">SUVs</h2>
-            </div>
-            <div class="border border-gray-300 shadow-xl  ">
-                <img class="w-full h-10/12" src="/src/images/convertibles.jpg" alt="">
-                <h2 class="text-xl pl-6 py-4 font-semibold  font-serif ">Convertibles</h2>
-            </div>
-            <div class="border border-gray-300 shadow-xl  ">
-                <img class="w-full h-10/12" src="/src/images/sportscar.jpg" alt="">
-                <h2 class="text-xl pl-6 py-4 font-semibold  font-serif ">Sportscar</h2>
-            </div>
-
-          </div>
-          </div>
-       </section>
-       <!--Testimonials  -->
-       <section class="bg-zinc-800">
-       <div class="container   mx-auto md:px-16  px-6 ">
-       <div class="flex flex-col gap-8 pb-24 ">
-        <div class="flex flex-col gap-4 pt-10">
-            <h3 class="text-xl text-orange-400 font-serif pt-10">Testimonials</h3>
-        <h2 class="text-4xl text-white font-serif font-semibold relative inline-block after:content-[''] after:block after:w-1/5 after:h-1 after:bg-orange-500 after:mt-4 after:mb-10">What Our Customers Say About Us</h1>
-        </div>
-        <div class="flex flex-row gap-8 pb-10">
-            <img src="/src/images/pp.jpg" alt="">
-            <div class="flex flex-col gap-6 justify-center">
-                <div>
-                    <img class="w-1/12 h-24 " src="/src/images/p.png" alt="">
-                <p class="text-xl text-gray-400 ">Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi.</p>
-                </div>
-                <div>
-                    <h3 class="text-2xl text-orange-400 font-semibold font-serif">Dianne Russell</h3>
-                <p class="text-white">Founder</p>
-                </div>
-            </div>
-        </div>
-       </div>
-       </div>  
-     
-       </section>
-
-       <!-- Download -->
-        <section class="bg-orange-400">
-            <div class="container mx-auto py-16  gap-8  ">
-                   <div class="flex flex-col justify-center items-center">
-                    <h1 class="text-3xl text-white font-bold font-serif">Download Our App & Get Started</h1> 
-                     </div>
-                     <div class=" flex items-center justify-center gap-4 pt-10">
-                      <a class=" px-5 gap-2 flex bg-orange-400 py-2 border border-white text-white text-center 
-                      hover:text-zinc-800 hover:scale-105 transition-all duration-500" href="https://www.apple.com/app-store/"><img src="/src/images/apple.png" alt="">App Store</a>
-                      <a class="px-5 flex gap-2 bg-orange-400 py-2 border border-white text-white text-center
-                      hover:text-zinc-800 hover:scale-105 transition-all duration-500" href="https://play.google.com/store/games?hl=en"><img src="/src/images/playstore.png" alt="">Play Store</a>
-                    </div>
-                
-                </div>
-            
-                
-        </section>
-
-        <!-- Footer -->
-         <footer class="bg-zinc-800">
-            <div class="container mx-auto px-4 md:px-16">
-                <div class="grid grid-cols-1 md:grid-cols-6 auto-rows-min gap-4 pt-10 md:pt-14">
-
-                <div class="flex flex-col justify-center sm:col-span-3 md:col-span-2 ">
-                   <img class="w-7/12" src="./images/logo.png" alt="">
-                   <div class="flex flex-col mb-4 mt-7">
-                    <p class="text-gray-300 hover:text-white transition">9056 Fairground Ave., New York, USA</p>
-                   <a class="text-gray-300 hover:text-white transition" href="#"><u>+0 123 456 7890</u></a>
-                   <a class="text-gray-300 hover:text-white transition" href="#"><u>info@company.com</u></a>
-                   </div>
-                   <div class="flex gap-3 mt-3 justify-center sm:justify-start">
-                    <a href="" aria-label="Facebook"><img class="w-6 h-6 hover:scale-110 hover:opacity-80 duration-500 transition" src="./images/facebook.png" alt=""></a>
-                    <a href="" aria-label="Twiter"><img class="w-6 h-6 hover:scale-110 hover:opacity-80 duration-500 transition" src="./images/twiter.png" alt=""></a>
-                    <a href="" aria-label="Instagram"><img class="w-6 h-6 hover:scale-110 hover:opacity-80 duration-500 transition" src="./images/instagram.png" alt=""></a>
-                    <a href="" aria-label="Linkedin"><img class="w-6 h-6 hover:scale-110 hover:opacity-80 duration-500 transition" src="./images/linkedin.png" alt=""></a>
-                    <a href="" aria-label="Youtube"><img class="w-6 h-6 hover:scale-110 hover:opacity-80 duration-500 transition" src="./images/youtube.png" alt=""></a>
-                   </div>
-                </div>
+            <div class="flex justify-between items-end pt-10 pb-6">
                 <div class="flex flex-col gap-4">
+                    <h3 class="text-xl text-orange-400 font-serif pt-10">Our Fleet</h3>
+                    <h2
+                        class="text-4xl font-serif font-semibold relative inline-block after:content-[''] after:block after:w-1/5 after:h-1 after:bg-orange-500 after:mt-5">
+                        Browse by Category</h1>
+                </div>
+                <div class="flex  ">
+                    <a class="px-8 py-2 text-center items-center justify-center flex md:px-6 md:py-3 h-10 bg-orange-400 hover:bg-zinc-800 hover:text-orange-400 transition-all duration-500  shadow-lg"
+                       href="#">View All</a>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-4 md:grid-rows-1 gap-8 py-6  items-center">
+                <div class="border border-gray-300 shadow-xl hover:scale-105 origin-top  transition duration-500  ">
+                    <img class="w-full h-10/12" src="/src/images/sedans.jpg" alt="">
+                    <h2 class="text-xl pl-6 py-4 font-semibold  font-serif ">Sedans</h2>
+                </div>
+                <div class="border border-gray-300 shadow-xl hover:scale-105 origin-top  transition duration-500 ">
+                    <img class="w-full h-10/12" src="/src/images/suv.jpg" alt="">
+                    <h2 class="text-xl pl-6 py-4 font-semibold  font-serif ">SUVs</h2>
+                </div>
+                <div class="border border-gray-300 shadow-xl hover:scale-105 origin-top  transition duration-500 ">
+                    <img class="w-full h-10/12" src="/src/images/convertibles.jpg" alt="">
+                    <h2 class="text-xl pl-6 py-4 font-semibold  font-serif ">Convertibles</h2>
+                </div>
+                <div class="border border-gray-300 shadow-xl  hover:scale-105 origin-top  transition duration-500">
+                    <img class="w-full h-10/12" src="/src/images/sportscar.jpg" alt="">
+                    <h2 class="text-xl pl-6 py-4 font-semibold  font-serif ">Sportscar</h2>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--Testimonials  -->
+    <section class="bg-zinc-800">
+        <div class="container mx-auto md:px-16 px-6">
+            <div class="flex flex-col gap-8 pb-24 ">
+                <div class="flex flex-col gap-4 pt-10">
+                    <h3 class="text-xl text-orange-400 font-serif pt-10">Testimonials</h3>
+                    <h2 class="text-4xl text-white font-serif font-semibold relative inline-block after:content-[''] after:block after:w-1/5 after:h-1 after:bg-orange-500 after:mt-4 after:mb-10">
+                        What Our Customers Say About Us
+                    </h2>
+                </div>
+                <div class="flex flex-col md:flex-row gap-8 pb-10">
+                    <img class="w-full md:w-1/4 h-auto rounded-lg " src="/src/images/pp.jpg" alt="Customer photo">
+                    <div class="flex flex-col gap-6 justify-center hover:scale-105 hover:origin-bottom transition duration-500">
+                        <div>
+                            <img class="w-1/12 h-24 rounded-full mb-4" src="/src/images/p.png" alt="Customer avatar">
+                            <p class="text-xl text-gray-400">
+                                Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl text-orange-400 font-semibold font-serif">Dianne Russell</h3>
+                            <p class="text-white">Founder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download -->
+    <section class="bg-orange-400">
+        <div class="container mx-auto py-16  gap-8  ">
+            <div class="flex flex-col justify-center items-center">
+                <h1 class="text-xl md:text-3xl text-white font-bold font-serif">Download Our App & Get Started</h1>
+            </div>
+            <div class=" flex flex-col md:flex-row items-center justify-center gap-4 pt-10">
+                <a class=" px-5 gap-2 flex bg-orange-400 py-2 border border-white text-white text-center 
+                      hover:text-zinc-800 hover:scale-105 transition-all duration-500"
+                    href="https://www.apple.com/app-store/"><img src="/src/images/apple.png" alt="">App Store</a>
+                <a class="px-5 flex gap-2 bg-orange-400 py-2 border border-white text-white text-center
+                      hover:text-zinc-800 hover:scale-105 transition-all duration-500"
+                    href="https://play.google.com/store/games?hl=en"><img src="/src/images/playstore.png" alt="">Play
+                    Store</a>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-800">
+        <div class="container mx-auto px-4 md:px-16">
+            <div class="grid grid-cols-1 md:grid-cols-6 auto-rows-min gap-10  md:gap-4 pt-10 md:pt-14">
+
+                <div class="flex flex-col justify-center sm:justify-start sm:col-span-3 md:col-span-2 ">
+                    <img class="w-7/12" src="./images/logo.png" alt="">
+                    <div class="flex flex-col mb-4 mt-7">
+                        <p class="text-gray-300 hover:text-white transition">9056 Fairground Ave., New York, USA</p>
+                        <a class="text-gray-300 hover:text-white transition" href="#"><u>+0 123 456 7890</u></a>
+                        <a class="text-gray-300 hover:text-white transition" href="#"><u>info@company.com</u></a>
+                    </div>
+                    <div class="flex gap-3 mt-3 justify-center sm:justify-start">
+                        <a href="" aria-label="Facebook"><img
+                                class="w-6 h-6 hover:scale-110 hover:opacity-80 duration-500 transition"
+                                src="./images/facebook.png" alt=""></a>
+                        <a href="" aria-label="Twiter"><img
+                                class="w-6 h-6 hover:scale-110 hover:opacity-80 duration-500 transition"
+                                src="./images/twiter.png" alt=""></a>
+                        <a href="" aria-label="Instagram"><img
+                                class="w-6 h-6 hover:scale-110 hover:opacity-80 duration-500 transition"
+                                src="./images/instagram.png" alt=""></a>
+                        <a href="" aria-label="Linkedin"><img
+                                class="w-6 h-6 hover:scale-110 hover:opacity-80 duration-500 transition"
+                                src="./images/linkedin.png" alt=""></a>
+                        <a href="" aria-label="Youtube"><img
+                                class="w-6 h-6 hover:scale-110 hover:opacity-80 duration-500 transition"
+                                src="./images/youtube.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4 ">
                     <div>
-                        <h3 class="text-xl text-gray-300 font-bold font-serif after:content-[''] after:block after:w-1/4 after:h-px after:bg-gray-500 after:mt-3 after:mb-4">Company</h3>
+                        <h3
+                            class="text-xl text-gray-300 font-bold font-serif after:content-[''] after:block after:w-1/4 after:h-px after:bg-gray-500 after:mt-3 after:mb-4">
+                            Company</h3>
                     </div>
                     <a class="text-gray-300 hover:text-white transition" href="#"><u>FAQ</u></a>
                     <a class="text-gray-300 hover:text-white transition" href="#"><u>News</u></a>
@@ -282,7 +351,9 @@
                 </div>
                 <div class="flex flex-col gap-4">
                     <div>
-                        <h3 class="text-xl text-gray-300 font-bold font-serif after:content-[''] after:block after:w-1/4 after:h-px  after:bg-gray-500 after:mt-3 after:mb-4">Vehicles</h3>
+                        <h3
+                            class="text-xl text-gray-300 font-bold font-serif after:content-[''] after:block after:w-1/4 after:h-px  after:bg-gray-500 after:mt-3 after:mb-4">
+                            Vehicles</h3>
                     </div>
                     <a class="text-gray-300 hover:text-white transition" href="#"><u>SUVs</u></a>
                     <a class="text-gray-300 hover:text-white transition" href="#"><u>Sedans</u></a>
@@ -291,8 +362,10 @@
                     <a class="text-gray-300 hover:text-white transition" href="#"><u>Convertibles</u></a>
                 </div>
                 <div class="flex flex-col gap-4">
-                    <div >
-                        <h3 class="text-xl text-gray-300 font-bold font-serif after:content-[''] after:block after:w-1/4 after:h-px  after:bg-gray-500 after:mt-3 after:mb-4">Top Cities</h3>
+                    <div>
+                        <h3
+                            class="text-xl text-gray-300 font-bold font-serif after:content-[''] after:block after:w-1/4 after:h-px  after:bg-gray-500 after:mt-3 after:mb-4">
+                            Top Cities</h3>
                     </div>
                     <a class="text-gray-300 hover:text-white transition" href="#"><u>Taxes</u></a>
                     <a class="text-gray-300 hover:text-white transition" href="#"><u>Boston</u></a>
@@ -301,19 +374,23 @@
                     <a class="text-gray-300 hover:text-white transition" href="#"><u>Manhattan</u></a>
                 </div>
                 <div class="flex flex-col gap-4 sm:justify-end ">
-                   
+
                     <a class="text-gray-300 hover:text-white transition" href="#"><u>Dallas</u></a>
                     <a class="text-gray-300 hover:text-white transition" href="#"><u>Huston</u></a>
                     <a class="text-gray-300 hover:text-white transition" href="#"><u>Seattle</u></a>
                     <a class="text-gray-300 hover:text-white transition" href="#"><u>Denver</u></a>
                     <a class="text-gray-300 hover:text-white transition" href="#"><u>Phoenix</u></a>
-                
-                </div>
-                 </div>
-                 
-           
-            </div>
 
-         </footer>
+                </div>
+            </div>
+            <div class="flex flex-row pt-10 justify-center items-center border-t mt-6   ">
+                <p class="mb-4 text-gray-300 ">&copy; 2025 Emri i Kompanisë. Të gjitha të drejtat e rezervuara.</p>
+                
+              </div>
+          
+        </div>
+
+    </footer>
 </body>
+
 </html>
